@@ -1,0 +1,218 @@
+2020-03-18 16:12:15,661-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 16:12:15,679-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:12:15,683-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 16:12:15,717-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 16:13:01,418-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:13:01,480-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:13:01,497-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:13:01,516-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:13:01,519-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-18 16:13:01,551-ERROR-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:点击元素失败！
+2020-03-18 16:13:01,702-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:截图成功存放路径D:\koko\selenium\report\screen_shot\投资模块_2020_03_18 16_13_01.png
+2020-03-18 16:20:06,481-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 16:20:06,500-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:20:06,504-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 16:20:06,549-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 16:20:53,307-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:20:53,376-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:20:53,392-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:20:53,406-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:20:53,409-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-18 16:20:53,648-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-18 16:20:54,236-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长1
+2020-03-18 16:21:17,758-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-18 16:21:17,794-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:23:23,590-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 16:23:23,612-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:23:23,619-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 16:23:23,645-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 16:24:06,878-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:24:06,942-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:24:06,955-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:24:06,971-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:24:06,974-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-18 16:24:07,213-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-18 16:24:07,777-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:24:31,308-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-18 16:24:31,372-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:25:17,630-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 16:25:17,648-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:25:17,653-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 16:25:17,687-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 16:26:03,914-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:26:03,958-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:26:03,979-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 16:26:03,994-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:26:03,998-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-18 16:26:04,242-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-18 16:26:04,811-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 16:26:28,605-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-18 16:26:28,644-INFO-log_class.py-D:\koko\selenium\report\logs\test_log.txt-日志信息:等待时长0
+2020-03-18 19:48:19,367-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 19:48:19,392-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 19:48:19,398-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 19:48:19,475-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 19:48:19,658-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-18 19:48:41,645-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长22
+2020-03-18 19:52:53,227-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 19:52:53,284-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 19:52:53,313-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 19:52:53,422-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 19:52:53,608-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-18 19:53:16,206-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长23
+2020-03-18 19:57:20,410-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 19:57:20,426-ERROR-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见失败！
+2020-03-18 19:58:46,885-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 19:58:46,931-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 19:58:46,947-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 19:58:46,994-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 19:59:08,645-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-18 19:59:08,677-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:05:10,218-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 20:05:10,249-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:05:10,249-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 20:05:10,296-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 20:05:32,161-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[text() = '抢投标']")
+2020-03-18 20:05:32,208-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:05:56,120-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 20:06:26,480-ERROR-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见失败！
+2020-03-18 20:06:26,645-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:截图成功存放路径D:\koko\selenium\report_test\screen_2\获取用户余额_2020_03_18 20:06:26.png
+2020-03-18 20:07:01,243-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 20:07:01,259-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:07:01,274-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 20:07:01,290-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 20:07:23,278-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-18 20:07:23,284-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:08:52,198-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 20:08:52,213-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:08:52,213-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 20:08:52,229-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 20:08:52,482-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[text() = '抢投标']")
+2020-03-18 20:08:52,999-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:09:18,063-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 20:09:18,110-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:09:18,110-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 20:09:18,126-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:09:18,126-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-18 20:09:18,379-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-18 20:09:18,942-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:09:42,513-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-18 20:09:42,575-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:10:15,434-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 20:10:15,487-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:10:15,503-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 20:10:15,556-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 20:10:37,798-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-18 20:10:37,813-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:17:59,699-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 20:17:59,730-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:17:59,736-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 20:17:59,752-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 20:18:22,725-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[text() = '抢投标']")
+2020-03-18 20:18:22,772-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:18:46,623-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 20:18:46,667-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:18:46,676-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-18 20:18:46,690-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:18:46,694-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-18 20:18:46,918-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-18 20:18:47,467-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-18 20:19:10,482-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-18 20:19:10,520-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:19:45,244-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-18 20:19:45,261-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-18 20:19:45,267-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-18 20:19:45,290-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-18 20:20:07,392-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-18 20:20:07,416-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:33:11,292-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 10:33:11,383-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:33:11,397-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 10:33:11,528-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 10:33:34,446-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[text() = '抢投标']")
+2020-03-20 10:33:34,527-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:34:00,240-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 10:34:00,330-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:34:00,366-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 10:34:00,431-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:34:00,446-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-20 10:34:00,806-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-20 10:34:01,384-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 10:34:25,517-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-20 10:34:25,626-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:35:04,691-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 10:35:04,854-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 10:35:04,873-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 10:35:05,069-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 10:35:28,110-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-20 10:35:28,137-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 11:21:01,234-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 11:21:01,293-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 11:21:01,303-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 11:21:01,520-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 11:21:23,994-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[text() = '抢投标']")
+2020-03-20 11:21:24,069-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 11:21:48,042-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 11:21:48,121-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 11:21:48,145-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 11:21:48,211-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 11:21:48,223-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-20 11:21:48,602-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-20 11:21:49,185-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 11:22:13,296-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-20 11:22:13,347-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 11:22:53,258-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 11:22:53,308-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 11:22:53,321-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 11:22:53,429-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 11:23:15,544-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-20 11:23:15,572-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:27:09,954-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 15:27:10,006-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 15:27:10,015-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 15:27:10,109-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 15:27:31,896-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[text() = '抢投标']")
+2020-03-20 15:27:32,070-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 15:27:56,171-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 15:27:56,248-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:27:56,260-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块10元素输入操作
+2020-03-20 15:27:56,628-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//div[@class ='text-center']")
+2020-03-20 15:27:57,224-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 15:28:48,299-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 15:28:48,391-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:28:48,454-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块100000000000000元素输入操作
+2020-03-20 15:28:49,113-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//div[@class ='text-center']")
+2020-03-20 15:28:50,243-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长1
+2020-03-20 15:29:40,801-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 15:29:40,878-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:29:40,892-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+2020-03-20 15:29:40,913-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:29:40,918-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:投资模块模块100元素输入操作
+2020-03-20 15:29:41,180-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+2020-03-20 15:29:41,780-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:29:49,069-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//li[@class='color_sub']")
+2020-03-20 15:29:49,075-ERROR-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见失败！
+2020-03-20 15:30:02,087-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 15:30:02,127-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 15:30:02,138-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 15:30:02,174-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 15:30:24,389-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-20 15:30:24,417-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 16:59:46,576-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 16:59:46,642-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 16:59:46,649-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 16:59:46,897-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 17:00:09,238-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-20 17:00:09,276-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 17:05:28,553-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 17:05:28,650-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 17:05:28,662-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 17:05:29,048-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 17:05:51,008-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-20 17:05:51,115-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 17:21:13,112-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//input[@name='phone']")
+2020-03-20 17:21:13,208-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
+2020-03-20 17:21:13,224-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块13825161923元素输入操作
+2020-03-20 17:21:13,338-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:登录模块模块lemon123元素输入操作
+2020-03-20 17:21:35,572-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待元素可见('xpath', "//a[contains(text(),'退出')]")
+2020-03-20 17:21:35,615-INFO-log_class_test.py-D:\koko\selenium\report_test\logs_1\test_log.txt-日志信息:等待时长0
