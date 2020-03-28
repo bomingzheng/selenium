@@ -1,0 +1,6 @@
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[@name='phone']")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块14725800852元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//div[@class ='layui-layer-content']")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0

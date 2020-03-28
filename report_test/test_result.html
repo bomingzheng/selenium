@@ -1,217 +1,471 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>报告</title>
-    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    
-<style type="text/css" media="screen">
-body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 120%; }
-table       { font-size: 100%; }
-/* -- heading ---------------------------------------------------------------------- */
-.heading {
-    margin-top: 0ex;
-    margin-bottom: 1ex;
-}
-.heading .description {
-    margin-top: 4ex;
-    margin-bottom: 6ex;
-}
-/* -- report ------------------------------------------------------------------------ */
-#total_row  { font-weight: bold; }
-.passCase   { color: #5cb85c; }
-.failCase   { color: #d9534f; font-weight: bold; }
-.errorCase  { color: #f0ad4e; font-weight: bold; }
-.hiddenRow  { display: none; }
-.testcase   { margin-left: 2em; }
-</style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-</head>
-<body >
-<script language="javascript" type="text/javascript">
-output_list = Array();
-/*level 调整增加只显示通过用例的分类 --Findyou
-0:Summary //all hiddenRow
-1:Failed  //pt hiddenRow, ft none
-2:Pass    //pt none, ft hiddenRow
-3:All     //pt none, ft none
-*/
-function showCase(level) {
-    trs = document.getElementsByTagName("tr");
-    for (var i = 0; i < trs.length; i++) {
-        tr = trs[i];
-        id = tr.id;
-        if (id.substr(0,2) == 'ft') {
-            if (level == 2 || level == 0 ) {
-                tr.className = 'hiddenRow';
-            }
-            else {
-                tr.className = '';
-            }
-        }
-        if (id.substr(0,2) == 'pt') {
-            if (level < 2) {
-                tr.className = 'hiddenRow';
-            }
-            else {
-                tr.className = '';
-            }
-        }
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
     }
-    //加入【详细】切换文字变化 --Findyou
-    detail_class=document.getElementsByClassName('detail');
-	//console.log(detail_class.length)
-	if (level == 3) {
-		for (var i = 0; i < detail_class.length; i++){
-			detail_class[i].innerHTML="收起"
-		}
-	}
-	else{
-			for (var i = 0; i < detail_class.length; i++){
-			detail_class[i].innerHTML="详细"
-		}
-	}
+    return Array.prototype.slice.call(iter);
 }
-function showClassDetail(cid, count) {
-    var id_list = Array(count);
-    var toHide = 1;
-    for (var i = 0; i < count; i++) {
-        //ID修改 点 为 下划线 -Findyou
-        tid0 = 't' + cid.substr(1) + '_' + (i+1);
-        tid = 'f' + tid0;
-        tr = document.getElementById(tid);
-        if (!tr) {
-            tid = 'p' + tid0;
-            tr = document.getElementById(tid);
-        }
-        id_list[i] = tid;
-        if (tr.className) {
-            toHide = 0;
-        }
+
+function find(selector, elem) {
+    if (!elem) {
+        elem = document;
     }
-    for (var i = 0; i < count; i++) {
-        tid = id_list[i];
-        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
-        if (toHide) {
-            document.getElementById(tid).className = 'hiddenRow';
-            document.getElementById(cid).innerText = "详细"
+    return elem.querySelector(selector);
+}
+
+function find_all(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sort_column(elem) {
+    toggle_sort_states(elem);
+    var colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    var key;
+    if (elem.classList.contains('numeric')) {
+        key = key_num;
+    } else if (elem.classList.contains('result')) {
+        key = key_result;
+    } else {
+        key = key_alpha;
+    }
+    sort_table(elem, key(colIndex));
+}
+
+function show_all_extras() {
+    find_all('.col-result').forEach(show_extras);
+}
+
+function hide_all_extras() {
+    find_all('.col-result').forEach(hide_extras);
+}
+
+function show_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.remove("collapsed");
+    expandcollapse.classList.remove("expander");
+    expandcollapse.classList.add("collapser");
+}
+
+function hide_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.add("collapsed");
+    expandcollapse.classList.remove("collapser");
+    expandcollapse.classList.add("expander");
+}
+
+function show_filters() {
+    var filter_items = document.getElementsByClassName('filter');
+    for (var i = 0; i < filter_items.length; i++)
+        filter_items[i].hidden = false;
+}
+
+function add_collapse() {
+    // Add links for show/hide all
+    var resulttable = find('table#results-table');
+    var showhideall = document.createElement("p");
+    showhideall.innerHTML = '<a href="javascript:show_all_extras()">Show all details</a> / ' +
+                            '<a href="javascript:hide_all_extras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    find_all('.col-result').forEach(function(elem) {
+        var collapsed = get_query_parameter('collapsed') || 'Passed';
+        var extras = elem.parentNode.nextElementSibling;
+        var expandcollapse = document.createElement("span");
+        if (extras.classList.contains("collapsed")) {
+            expandcollapse.classList.add("expander")
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add("collapsed");
+            expandcollapse.classList.add("expander");
+        } else {
+            expandcollapse.classList.add("collapser");
         }
-        else {
-            document.getElementById(tid).className = '';
-            document.getElementById(cid).innerText = "收起"
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener("click", function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains("collapsed")) {
+                show_extras(event.currentTarget);
+            } else {
+                hide_extras(event.currentTarget);
+            }
+        });
+    })
+}
+
+function get_query_parameter(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () {
+    reset_sort_headers();
+
+    add_collapse();
+
+    show_filters();
+
+    sort_column(find('.initial-sort'));
+
+    find_all('.sortable').forEach(function(elem) {
+        elem.addEventListener("click",
+                              function(event) {
+                                  sort_column(elem);
+                              }, false)
+    });
+
+};
+
+function sort_table(clicked, key_func) {
+    var rows = find_all('.results-table-row');
+    var reversed = !clicked.classList.contains('asc');
+    var sorted_rows = sort(rows, key_func, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    var thead = document.getElementById("results-table-head");
+    document.getElementById('results-table').remove();
+    var parent = document.createElement("table");
+    parent.id = "results-table";
+    parent.appendChild(thead);
+    sorted_rows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName("BODY")[0].appendChild(parent);
+}
+
+function sort(items, key_func, reversed) {
+    var sort_array = items.map(function(item, i) {
+        return [key_func(item), i];
+    });
+
+    sort_array.sort(function(a, b) {
+        var key_a = a[0];
+        var key_b = b[0];
+
+        if (key_a == key_b) return 0;
+
+        if (reversed) {
+            return (key_a < key_b ? 1 : -1);
+        } else {
+            return (key_a > key_b ? 1 : -1);
         }
+    });
+
+    return sort_array.map(function(item) {
+        var index = item[1];
+        return items[index];
+    });
+}
+
+function key_alpha(col_index) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[col_index].firstChild.data.toLowerCase();
+    };
+}
+
+function key_num(col_index) {
+    return function(elem) {
+        return parseFloat(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function key_result(col_index) {
+    return function(elem) {
+        var strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+                       'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function reset_sort_headers() {
+    find_all('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    find_all('.sortable').forEach(function(elem) {
+        var icon = document.createElement("div");
+        icon.className = "sort-icon";
+        icon.textContent = "vvv";
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove("desc", "active");
+        elem.classList.add("asc", "inactive");
+    });
+}
+
+function toggle_sort_states(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        reset_sort_headers();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
     }
 }
-function html_escape(s) {
-    s = s.replace(/&/g,'&amp;');
-    s = s.replace(/</g,'&lt;');
-    s = s.replace(/>/g,'&gt;');
-    return s;
+
+function is_all_rows_hidden(value) {
+  return value.hidden == false;
+}
+
+function filter_table(elem) {
+    var outcome_att = "data-test-result";
+    var outcome = elem.getAttribute(outcome_att);
+    class_outcome = outcome + " results-table-row";
+    var outcome_rows = document.getElementsByClassName(class_outcome);
+
+    for(var i = 0; i < outcome_rows.length; i++){
+        outcome_rows[i].hidden = !elem.checked;
+    }
+
+    var rows = find_all('.results-table-row').filter(is_all_rows_hidden);
+    var all_rows_hidden = rows.length == 0 ? true : false;
+    var not_found_message = document.getElementById("not-found-message");
+    not_found_message.hidden = !all_rows_hidden;
 }
 </script>
-<div class='heading'>
-<h1 style="font-family: Microsoft YaHei">报告</h1>
-<p class='attribute'><strong>测试人员 : </strong> Bomz</p>
-<p class='attribute'><strong>开始时间 : </strong> 2020-03-24 14:37:23</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.000997</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 2，错误 2，通过率= 0.00%</p>
-
-<p class='description'>下单接口报告</p>
-</div>
-
-
-<p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
-</p>
-<table id='result_table' class="table table-condensed table-bordered table-hover">
-<colgroup>
-<col align='left' />
-<col align='right' />
-<col align='right' />
-<col align='right' />
-<col align='right' />
-<col align='right' />
-</colgroup>
-<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 16px;">
-    <td>用例集/测试用例</td>
-    <td>总计</td>
-    <td>通过</td>
-    <td>失败</td>
-    <td>错误</td>
-    <td>详细</td>
-</tr>
-
-<tr class='errorClass warning'>
-    <td>test_invest.Test</td>
-    <td class="text-center">2</td>
-    <td class="text-center">0</td>
-    <td class="text-center">0</td>
-    <td class="text-center">2</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c1',2)" class="detail" id='c1'>详细</a></td>
-</tr>
-
-<tr id='ft1_1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_invest</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
-    <div id='div_ft1_1' class="collapse">  -->
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
-    <div id='div_ft1_1' class="collapse in" align="left">
-    <pre>
-    
-ft1_1: TypeError: test_invest() missing 1 required positional argument: 'i'
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='ft1_2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_invest_triumph</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
-    <div id='div_ft1_2' class="collapse">  -->
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
-    <div id='div_ft1_2' class="collapse in" align="left">
-    <pre>
-    
-ft1_2: Traceback (most recent call last):
-  File "D:\git_hub\selenium\case_test\test_invest.py", line 59, in test_invest_triumph
-    before_money = self.ix.get_uer_money()
-AttributeError: 'Test' object has no attribute 'ix'
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='total_row' class="text-center active">
-    <td>总计</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>2</td>
-    <td>通过率：0.00%</td>
-</tr>
-</table>
-
-<div id='ending'>&nbsp;</div>
-    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
-    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
-    </span></a></div>
-    
-</body>
-</html>
+    <h1>test_result.html</h1>
+    <p>Report generated on 27-Mar-2020 at 10:28:57 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>BUILD_ID</td>
+        <td>14</td></tr>
+      <tr>
+        <td>BUILD_NUMBER</td>
+        <td>14</td></tr>
+      <tr>
+        <td>BUILD_TAG</td>
+        <td>jenkins-python_selenium-14</td></tr>
+      <tr>
+        <td>BUILD_URL</td>
+        <td><a href="http://localhost:8080/job/python_selenium/14/" target="_blank">http://localhost:8080/job/python_selenium/14/</a></td></tr>
+      <tr>
+        <td>EXECUTOR_NUMBER</td>
+        <td>1</td></tr>
+      <tr>
+        <td>JAVA_HOME</td>
+        <td>C:\Program Files\Java\jdk1.8.0_241</td></tr>
+      <tr>
+        <td>JENKINS_URL</td>
+        <td><a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a></td></tr>
+      <tr>
+        <td>JOB_NAME</td>
+        <td>python_selenium</td></tr>
+      <tr>
+        <td>NODE_NAME</td>
+        <td>master</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "0.13.1", "py": "1.8.1", "pytest": "5.4.1"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.18362-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"html": "2.1.1", "metadata": "1.8.0", "rerunfailures": "9.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.8.2</td></tr>
+      <tr>
+        <td>WORKSPACE</td>
+        <td>D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium</td></tr></table>
+    <h2>Summary</h2>
+    <p>11 tests ran in 328.80 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">11 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">0 rerun</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable numeric" col="duration">Duration</th>
+          <th>Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_invest.py::Test::test_invest[i0]</td>
+          <td class="col-duration">26.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log setup------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块13825161923元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//a[text() = &#x27;抢投标&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 投资模块模块10元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class =&#x27;text-center&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_invest.py::Test::test_invest[i1]</td>
+          <td class="col-duration">25.96</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 投资模块模块100000000000000元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class =&#x27;text-center&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_invest.py::Test::test_invest_triumph</td>
+          <td class="col-duration">24.80</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[contains(@class,&#x27;invest-unit-investinput&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 投资模块模块100元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &#x27;/html/body/div[9]/div/div[1]/div[4]/button&#x27;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长1
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//li[@class=&#x27;color_sub&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_error_format[i0]</td>
+          <td class="col-duration">32.28</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长2
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块1382516192元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class=&#x27;form-error-info&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长2<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_error_format[i1]</td>
+          <td class="col-duration">16.48</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长2
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块138251619231元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class=&#x27;form-error-info&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_error_format[i2]</td>
+          <td class="col-duration">0.78</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块11382516192元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class=&#x27;form-error-info&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_error_format[i3]</td>
+          <td class="col-duration">0.58</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class=&#x27;form-error-info&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_error_format[i4]</td>
+          <td class="col-duration">0.83</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块13825161923元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class=&#x27;form-error-info&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_unregistered[data0]</td>
+          <td class="col-duration">1.14</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块14725800852元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class =&#x27;layui-layer-content&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长1<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_unregistered[data1]</td>
+          <td class="col-duration">1.38</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块13825161923元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon111元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//div[@class =&#x27;layui-layer-content&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长1<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">case_test/test_login.py::TestLogin::test_login_win</td>
+          <td class="col-duration">22.55</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//input[@name=&#x27;phone&#x27;]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块13825161923元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 登录模块模块lemon123元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见(&#x27;xpath&#x27;, &quot;//a[contains(text(),&#x27;退出&#x27;)]&quot;)
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长22<br/></div></td></tr></tbody></table></body></html>

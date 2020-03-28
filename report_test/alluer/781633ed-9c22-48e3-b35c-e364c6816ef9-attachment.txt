@@ -1,0 +1,9 @@
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 投资模块模块100元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', '/html/body/div[9]/div/div[1]/div[4]/button')
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//li[@class='color_sub']")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0

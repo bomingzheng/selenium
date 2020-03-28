@@ -1,0 +1,16 @@
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 投资模块模块100000000000000元素输入操作
+ERROR    D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:21 点击元素失败！
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 截图成功存放路径D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\screen_2\投资模块_2020_03_28 19:49:01.png
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 投资模块模块100000000000000元素输入操作
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//div[@class ='text-center']")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长1
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待元素可见('xpath', "//input[contains(@class,'invest-unit-investinput')]")
+INFO     D:\git_hub\jmeter_jenkins\jenkins\workspace\python_selenium\report_test\logs_1\test_log.txt:log_class_test.py:19 等待时长0

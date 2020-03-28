@@ -1,0 +1,8 @@
+[ {
+  "buildOrder" : 25,
+  "reportUrl" : "http://localhost:8080/job/python_selenium/25/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "duration" : 279151
+  }
+} ]

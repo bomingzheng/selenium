@@ -1,0 +1,11 @@
+. case_test/test_invest.py::Test::test_invest[i0]
+. case_test/test_invest.py::Test::test_invest[i1]
+. case_test/test_invest.py::Test::test_invest_triumph
+. case_test/test_login.py::TestLogin::test_login_error_format[i0]
+. case_test/test_login.py::TestLogin::test_login_error_format[i1]
+. case_test/test_login.py::TestLogin::test_login_error_format[i2]
+. case_test/test_login.py::TestLogin::test_login_error_format[i3]
+. case_test/test_login.py::TestLogin::test_login_error_format[i4]
+. case_test/test_login.py::TestLogin::test_login_unregistered[data0]
+. case_test/test_login.py::TestLogin::test_login_unregistered[data1]
+. case_test/test_login.py::TestLogin::test_login_win
